@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB PERKENALAN IYOK</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f4f4f4 100%);
+            overflow-x: hidden;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+        header.scrolled {
+            background-color: #0056b3;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s, left 0.3s;
+            transform: translateX(-50%);
+        }
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        nav a:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        section {
+            padding: 100px 20px 60px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        footer {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .profile-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        .profile-container img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 8px solid #007bff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .profile-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        .profile-description {
+            max-width: 600px;
+        }
+        .profile-description h2 {
+            margin: 0;
+            font-size: 30px;
+            color: #333;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        .profile-description h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #007bff;
+            border-radius: 2px;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .profile-description h2:hover::after {
+            transform: scaleX(1);
+        }
+        .profile-description p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #666;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        .parallax {
+            background-image: url('https://via.placeholder.com/1920x600');
+            height: 400px;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+        }
+        .parallax h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            transition: color 0.3s;
+        }
+        .parallax:hover h1 {
+            color: #ffdfd4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#profile">Profile</a>
+            <a href="#content">Content</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="parallax">
+        <h1>SELAMAT DATANG</h1>
+    </div>
+
+    <section id="home">
+        <h1>Halo teman - teman</h1>
+        <p>Terima kasih telah mengunjungi situs web saya. Di sini, Anda akan menemukan berbagai informasi tentang diri saya, proyek yang saya kerjakan, serta beberapa konten menarik lainnya.</p>
+    </section>
+
+    <section id="profile">
+        <div class="profile-container">
+            <img src="yokkkyokkk.jpg" alt="Foto Profil">
+            <div class="profile-description">
+                <h2>Halo, Nama Saya Maulana Satria Sunarto</h2>
+                <p>Saya adalah seorang pelajar SMK Krian 1. Saya memiliki minat dalam teknologi dan desain web. Saya senang belajar hal-hal baru dan berusaha untuk terus mengembangkan keterampilan saya di bidang ini.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="content">
+        <h2>Konten</h2>
+        <p>Bagian ini akan menampilkan berbagai konten yang dapat Anda tambahkan sesuai kebutuhan. Pastikan untuk memberikan informasi yang bermanfaat dan menarik bagi pengunjung.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Kontak</h2>
+        <p>Jika anda memiliki pertanyaan atau ingin berkolaborasi, silakan hubungi saya melalui instagram @iyokspartdua</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 WEB PERKENALAN. Semua hak cipta dilindungi.</p>
+    </footer>
+</body>
+</html>
